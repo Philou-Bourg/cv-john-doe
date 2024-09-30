@@ -1,0 +1,96 @@
+body {
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 400; /* Gras 400 pour le corps du texte */
+}
+
+h1, h2, h3, h4, h5, h6, strong {
+  font-weight: 600; /* Gras 600 pour les titres et <strong> */
+}
+
+/* Section Hero */
+.hero-section {
+  background-image: url('/public/img/hero-bg.jpg'); /* Chemin vers ton image de fond */
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  color: #fff;
+  text-align: center;
+  margin: 0 -15px; /* Retirer la marge latérale pour aligner */
+}
+
+.hero-title {
+  font-size: 2rem;
+ }
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+
+/* Section About */
+.about-section {
+  
+  border: 1px solid #d3d3d3; /* Contour gris clair */
+  padding: 20px; /* Espace intérieur pour le contenu */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Ombre légère pour le relief */
+  background-color: #fff; /* Fond blanc pour la section */
+  margin: 5px auto 5px; /* Marge automatique pour centrer horizontalement */
+  margin-bottom: 40px;
+}
+
+.about-section h3 {
+  position: relative;
+  padding-bottom: 10px; /* Espace sous le texte avant la ligne */
+  margin-bottom: 20px; /* Optionnel : plus d'espace après le titre */
+}
+
+.about-section h3::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%; /* Ligne qui s'étend sur toute la largeur de la colonne */
+  height: 2px; /* Trait plus fin */
+  background-color: #0d6efd; /* Couleur bleue */
+}
+
+
+
+.about-section {
+  margin-top: 50px;
+}
+
+.skill {
+  margin-bottom: 15px;
+}
+
+.progress {
+  height: 20px;
+  background-color: #e9ecef;
+}
+
+.progress-bar {
+  background-color: #0d6efd; /* Couleur principale pour les barres de progression */
+  height: 100%;
+}
+
+.html-skill {
+  background-color: rgba(218, 17, 20, 0.756); /* Couleur rouge pour la barre de progression HTML5 */
+}
+
+.css-skill {
+  background-color: #00BFFF; /* Couleur bleu ciel pour la barre de progression CSS */
+}
+
+.java-script-skill {
+  background-color: #ffc800; /* Couleur bleu ciel pour la barre de progression CSS */
+}
+
+.php-skill {
+  background-color: #498b70; /* Couleur bleu ciel pour la barre de progression CSS */
+}
+
+.react-skill {
+  background-color: #0d6efd; /* Couleur bleu ciel pour la barre de progression CSS */
+}
