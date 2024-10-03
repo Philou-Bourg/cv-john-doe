@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link as ScrollLink } from 'react-scroll';
+import { Link, useLocation } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const Footer = () => {  
+const Footer = () => {
   const [showScroll, setShowScroll] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,7 +26,7 @@ const Footer = () => {
 
   return (
     <footer className="bg-light text-dark py-4">
-      <div className="container"> {/* Ajout de la classe container ici */}
+      <div className="container">
         <div className="row">
           {/* Colonne 1: Informations de contact et réseaux sociaux */}
           <div className="col-md-3">
@@ -38,7 +40,7 @@ const Footer = () => {
                 rel="noopener noreferrer nofollow"
                 className="social-icon github"
               >
-                <i className="fab fa-github"></i> {/* GitHub: chat blanc, fond noir, cercle */}
+                <i className="fab fa-github"></i>
               </a>
               <a
                 href="https://twitter.com/johndoe"
@@ -46,7 +48,7 @@ const Footer = () => {
                 rel="noopener noreferrer nofollow"
                 className="social-icon twitter"
               >
-                <i className="fab fa-twitter"></i> {/* Twitter: oiseau blanc, fond noir, carré */}
+                <i className="fab fa-twitter"></i>
               </a>
               <a
                 href="https://www.linkedin.com/in/philippe-peeters-a6a6645a/"
@@ -54,7 +56,7 @@ const Footer = () => {
                 rel="noopener noreferrer nofollow"
                 className="social-icon linkedin"
               >
-                <i className="fab fa-linkedin"></i> {/* LinkedIn: "IN" blanc, fond noir, carré */}
+                <i className="fab fa-linkedin"></i>
               </a>
             </div>
           </div>
@@ -63,8 +65,20 @@ const Footer = () => {
           <div className="col-md-3">
             <h5>Liens utiles</h5>
             <ul className="list-unstyled">
-              <li><Link to="/" className="custom-link">Accueil</Link></li>
-              <li><Link to="/" className="custom-link">À propos</Link></li>
+              <li><Link to="/" className="custom-link" onClick={scrollToTop}>Accueil</Link></li>
+              {location.pathname === '/' ? (
+                <li>
+                  <ScrollLink to="about-section" smooth={true} duration={500} className="custom-link">
+                    À propos
+                  </ScrollLink>
+                </li>
+              ) : (
+                <li>
+                  <Link to="/#about-section" className="custom-link" onClick={scrollToTop}>
+                    À propos
+                  </Link>
+                </li>
+              )}
               <li><Link to="/services" className="custom-link">Services</Link></li>
               <li><Link to="/contact" className="custom-link">Me contacter</Link></li>
               <li><Link to="/legal" className="custom-link">Mentions légales</Link></li>
@@ -92,24 +106,24 @@ const Footer = () => {
           </div>
         </div>
       </div>
-        <div className="footer text-center mt-3">
-          <div className="footer-bar">
-            <div className="container"> {/* Ajout de la classe container ici */}
-              <p className="footer-text">&copy; Designed by Philippe Peeters</p>
-            </div>    
+
+      <div className="footer text-center mt-3">
+        <div className="footer-bar">
+          <div className="container">
+            <p className="footer-text">&copy; Designed by Philippe Peeters</p>
           </div>
-          {showScroll && (
-            <button
-              onClick={scrollToTop}
-              className="btn"
-              style={{ backgroundColor: '#298eff', color: '#fff' }}
-              aria-label="Retour en haut de la page"
-            >
-              Retour en haut
-            </button>
-          )}
         </div>
-      
+        {showScroll && (
+          <button
+            onClick={scrollToTop}
+            className="btn"
+            style={{ backgroundColor: '#298eff', color: '#fff' }}
+            aria-label="Retour en haut de la page"
+          >
+            Retour en haut
+          </button>
+        )}
+      </div>
 
       {/* Styles pour les liens personnalisés et les icônes */}
       <style jsx>{`
@@ -117,7 +131,7 @@ const Footer = () => {
           color: #444; /* Texte des liens en #444 */
           position: relative;
           padding-left: 15px;
-          text-decoration: none;  /* Suppression du soulignement */
+          text-decoration: none;
         }
 
         .custom-link::before {
@@ -145,7 +159,6 @@ const Footer = () => {
           font-size: 20px;
         }
 
-        /* GitHub: chat blanc, cercle */
         .github {
           background-color: #f8f9fa;
           border-radius: 50%;
@@ -155,7 +168,6 @@ const Footer = () => {
           border: 2px solid transparent;
         }
 
-        /* Twitter: fond noir, oiseau blanc, carré */
         .twitter {
           color: #fff;
           background-color: #000;
@@ -166,7 +178,6 @@ const Footer = () => {
           transition: background-color 0.3s ease;
         }
 
-        /* LinkedIn: fond noir, "IN" blanc, carré */
         .linkedin {
           background-color: #f8f9fa;
           padding: 10px;
@@ -194,14 +205,12 @@ const Footer = () => {
         .footer-bar {
           background-color: #000; /* Fond noir */
           padding: 10px 0; /* Optionnel : Ajoute un peu de padding vertical */
-          
         }
 
         .footer-text {
           color: #fff; /* Texte blanc */
           margin: 0; /* Supprime les marges par défaut */
         }
-
       `}</style>
     </footer>
   );
