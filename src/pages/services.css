@@ -1,0 +1,54 @@
+/* services.css */
+body {
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 400; /* Gras 400 pour le corps du texte */
+  }
+  
+  h1, h2, h3, h4, h5, h6, strong {
+    font-weight: 600; /* Gras 600 pour les titres et <strong> */
+  }
+
+/* Par défaut (desktop) */
+.banner {
+    width: 100%;
+    max-height: 50vh;
+    object-fit: cover;
+    object-position: bottom;
+  }
+  
+ /* Pour les tablettes */
+@media (max-width: 1024px) {
+    .banner {
+      content: url('/public/img/banner-tablette.jpg'); /* Chemin depuis le dossier public */
+    }
+  }
+  
+  /* Pour les mobiles */
+  @media (max-width: 768px) {
+    .banner {
+      content: url('/public/img/banner-mobile.jpg'); /* Chemin depuis le dossier public */
+    }
+  }
+  
+  /* Styles supplémentaires pour les autres éléments de la page */
+  h1 {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 2rem;
+  } 
+
+  .offre-services {
+    text-align: center; /* Centrer le texte */
+    position: relative; /* Pour positionner le souligné */
+    margin: 20px 0; /* Ajout de marge en haut et en bas */
+}
+  
+  /* Ajout du souligné sous le paragraphe */
+.offre-services::after {
+    content: ''; /* Nécessaire pour créer l'élément */
+    display: block; /* Permet d'occuper une ligne entière */
+    width: 13%; /* (13% de la largeur du parent) */
+    height: 2px; /* Hauteur de l'élément */
+    background-color: #0d6efd; /* Couleur de fond */
+    margin: 10px auto 0; /* Centrer l'élément et ajouter un espace au-dessus */
+}

@@ -26,13 +26,13 @@ const Navbar = () => {
               <NavLink className="nav-link text-uppercase" to="/services" activeClassName="active">Services</NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link text-uppercase" to="/portfolio" activeClassName="active">Portfolio</NavLink>
+              <NavLink className="nav-link text-uppercase" to="/portfolio" activeClassName="active">Réalisations</NavLink>
             </li>
             <li className="nav-item">
               <NavLink className="nav-link text-uppercase" to="/blog" activeClassName="active">Blog</NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link text-uppercase" to="/contact" activeClassName="active">Contact</NavLink>
+              <NavLink className="nav-link text-uppercase" to="/contact" activeClassName="active">Me contacter</NavLink>
             </li>
             <li className="nav-item">
               <NavLink className="nav-link text-uppercase" to="/legal" activeClassName="active">Mentions légales</NavLink>

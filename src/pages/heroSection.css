@@ -8,6 +8,7 @@ h1, h2, h3, h4, h5, h6, strong {
 }
 
 /* Section Hero */
+/* Image de fond pour les grands écrans */
 .hero-section {
   background-image: url('/public/img/hero-bg.jpg'); /* Chemin vers ton image de fond */
   background-size: cover;
@@ -15,34 +16,55 @@ h1, h2, h3, h4, h5, h6, strong {
   height: 100vh;
   color: #fff;
   text-align: center;
-  margin: 0 -15px; /* Retirer la marge latérale pour aligner */
+  padding: 0 15px; /* Ajout de padding pour éviter le débordement */
+  margin: 0;
 }
 
 .hero-title {
   font-size: 2rem;
- }
+}
 
 .hero-subtitle {
   font-size: 1.5rem;
   margin-bottom: 20px;
 }
 
+/* Media Queries pour la section Hero */
+/* Image de fond pour les tablettes */
+@media (max-width: 992px) {
+  .hero-section {
+    background-image: url('/public/img/hero-bg-tablette.jpg');
+  }
+}
+
+/* Image de fond pour les mobiles */
+@media (max-width: 576px) {
+  .hero-section {
+    background-image: url('/public/img/hero-bg-mobile.jpg');
+  }
+
+  .hero-title {
+    font-size: 1.5rem; /* Ajustement de la taille pour mobile */
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem; /* Ajustement de la taille pour mobile */
+  }
+}
 
 /* Section About */
 .about-section {
-  
   border: 1px solid #d3d3d3; /* Contour gris clair */
-  padding: 20px; /* Espace intérieur pour le contenu */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Ombre légère pour le relief */
-  background-color: #fff; /* Fond blanc pour la section */
-  margin: 5px auto 5px; /* Marge automatique pour centrer horizontalement */
-  margin-bottom: 40px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  margin: 5px auto 40px;
 }
 
 .about-section h3 {
   position: relative;
-  padding-bottom: 10px; /* Espace sous le texte avant la ligne */
-  margin-bottom: 20px; /* Optionnel : plus d'espace après le titre */
+  padding-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .about-section h3::after {
@@ -50,15 +72,9 @@ h1, h2, h3, h4, h5, h6, strong {
   position: absolute;
   left: 0;
   bottom: 0;
-  width: 100%; /* Ligne qui s'étend sur toute la largeur de la colonne */
-  height: 2px; /* Trait plus fin */
-  background-color: #0d6efd; /* Couleur bleue */
-}
-
-
-
-.about-section {
-  margin-top: 50px;
+  width: 100%;
+  height: 2px;
+  background-color: #0d6efd;
 }
 
 .skill {
@@ -71,26 +87,26 @@ h1, h2, h3, h4, h5, h6, strong {
 }
 
 .progress-bar {
-  background-color: #0d6efd; /* Couleur principale pour les barres de progression */
+  background-color: #0d6efd;
   height: 100%;
 }
 
 .html-skill {
-  background-color: rgba(218, 17, 20, 0.756); /* Couleur rouge pour la barre de progression HTML5 */
+  background-color: rgba(218, 17, 20, 0.756); /* Rouge pour HTML5 */
 }
 
 .css-skill {
-  background-color: #00BFFF; /* Couleur bleu ciel pour la barre de progression CSS */
+  background-color: #00BFFF; /* Bleu ciel pour CSS */
 }
 
 .java-script-skill {
-  background-color: #ffc800; /* Couleur bleu ciel pour la barre de progression CSS */
+  background-color: #ffc800; /* Jaune pour JavaScript */
 }
 
 .php-skill {
-  background-color: #498b70; /* Couleur bleu ciel pour la barre de progression CSS */
+  background-color: #498b70; /* Vert pour PHP */
 }
 
 .react-skill {
-  background-color: #0d6efd; /* Couleur bleu ciel pour la barre de progression CSS */
+  background-color: #0d6efd; /* Bleu pour React */
 }
